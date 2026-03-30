@@ -1,0 +1,86 @@
+<Window x:Class="CaptureUnCaptureMouse.MainWindow"
+				xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				Title="화면 캡처 + OCR + 번역" Height="780" Width="1120" MinHeight="680" MinWidth="920">
+	<Grid Margin="16">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="10" />
+			<RowDefinition Height="2*" />
+			<RowDefinition Height="10" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="10" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<StackPanel Grid.Row="0" Orientation="Vertical">
+			<WrapPanel>
+				<Button x:Name="CaptureButton"
+								Width="170"
+								Height="36"
+								Margin="0,0,10,0"
+								Content="전체 화면 캡처 + OCR"
+								Click="CaptureAndRecognize_Click" />
+				<Button x:Name="SaveImageButton"
+								Width="130"
+								Height="36"
+								Margin="0,0,10,0"
+								Content="이미지 저장"
+								Click="SaveImage_Click" />
+				<ComboBox x:Name="TargetLanguageCombo"
+									Width="160"
+									Height="36"
+									Margin="0,0,10,0"
+									VerticalContentAlignment="Center">
+					<ComboBoxItem Content="한국어" Tag="ko" />
+					<ComboBoxItem Content="영어" Tag="en" />
+					<ComboBoxItem Content="일본어" Tag="ja" />
+					<ComboBoxItem Content="중국어 간체" Tag="zh-CN" />
+				</ComboBox>
+				<Button x:Name="TranslateButton"
+								Width="120"
+								Height="36"
+								Margin="0,0,10,0"
+								Content="텍스트 번역"
+								Click="TranslateButton_Click" />
+				<CheckBox x:Name="AutoTranslateCheckBox"
+									VerticalAlignment="Center"
+									Content="OCR 후 자동 번역"
+									IsChecked="True" />
+			</WrapPanel>
+			<TextBlock x:Name="StatusText"
+							 Margin="0,8,0,0"
+							 Text="대기 중" />
+		</StackPanel>
+
+		<Border Grid.Row="2" BorderThickness="1" BorderBrush="#DDDDDD" CornerRadius="4" Padding="8">
+			<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+				<Image x:Name="CapturedImage" Stretch="Uniform" />
+			</ScrollViewer>
+		</Border>
+
+		<GroupBox Grid.Row="4" Header="OCR 추출 텍스트" Padding="8">
+			<TextBox x:Name="OcrResultText"
+							 AcceptsReturn="True"
+							 TextWrapping="Wrap"
+							 VerticalScrollBarVisibility="Auto"
+							 HorizontalScrollBarVisibility="Auto"
+							 FontFamily="Consolas"
+							 FontSize="14"
+							 Padding="10"
+							 IsReadOnly="False" />
+		</GroupBox>
+
+		<GroupBox Grid.Row="6" Header="번역 결과" Padding="8">
+			<TextBox x:Name="TranslatedResultText"
+							 AcceptsReturn="True"
+							 TextWrapping="Wrap"
+							 VerticalScrollBarVisibility="Auto"
+							 HorizontalScrollBarVisibility="Auto"
+							 FontFamily="Consolas"
+							 FontSize="14"
+							 Padding="10"
+							 IsReadOnly="False" />
+		</GroupBox>
+	</Grid>
+</Window>

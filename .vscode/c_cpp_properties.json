@@ -1,18 +1,62 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "pico-project",
+            "compileCommands": "/home/jjy2026/class-main/class-main/pico_project/build_pico2w/compile_commands.json",
             "includePath": [
-                "${workspaceFolder}/**"
+                "/home/jjy2026/class-main/class-main/pico_project/**",
+                "/home/jjy2026/class-main/class-main/pico_project/src/**",
+                "/usr/include/newlib",
+                "/home/jjy2026/pico/pico-sdk/src/common/pico_stdlib_headers/include",
+                "/home/jjy2026/pico/pico-sdk/src/common/pico_base_headers/include",
+                "/home/jjy2026/pico/pico-sdk/src/rp2_common/hardware_pwm/include",
+                "/home/jjy2026/pico/pico-sdk/src/rp2_common/hardware_gpio/include",
+                "/home/jjy2026/pico/pico-sdk/src/rp2_common/hardware_base/include"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "c17",
-            "cppStandard": "gnu++17",
-            "intelliSenseMode": "linux-gcc-x64",
-            "compileCommands": [
-                "${workspaceFolder}/pico_project/moter2/build/compile_commands.json"
-            ]
+            "forcedInclude": [
+                "/home/jjy2026/class-main/class-main/pico_project/build_pico2w/generated/pico_base/pico/config_autogen.h",
+                "/home/jjy2026/pico/pico-sdk/src/common/pico_base_headers/include/pico.h"
+            ],
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-arm"
+        },
+        {
+            "name": "avr-atmega128-workspace",
+            "includePath": [
+                "${workspaceFolder}/atmega128/**",
+                "${workspaceFolder}/atmega128/deps/**",
+                "/usr/lib/gcc/avr/7.3.0/include",
+                "/usr/lib/gcc/avr/7.3.0/include-fixed",
+                "/usr/lib/avr/include",
+                "/usr/include/**",
+                "/usr/local/include/**"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/atmega128",
+                    "${workspaceFolder}/atmega128/deps",
+                    "/usr/lib/gcc/avr/7.3.0/include",
+                    "/usr/lib/gcc/avr/7.3.0/include-fixed",
+                    "/usr/lib/avr/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            },
+            "defines": [
+                "F_CPU=16000000UL",
+                "__AVR__",
+                "__AVR_ATmega128__"
+            ],
+            "compilerPath": "/usr/bin/avr-gcc",
+            "compilerArgs": [
+                "-mmcu=atmega128",
+                "-DF_CPU=16000000UL"
+            ],
+            "cStandard": "gnu11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4

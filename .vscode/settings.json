@@ -1,9 +1,15 @@
 {
-    "cmake.sourceDirectory": "/home/jjy2026/pico_project",
-    "chat.tools.terminal.autoApprove": {
-        "/^whoami && pwd && command -v cmake && command -v git && command -v pkg-config$/": {
-            "approve": true,
-            "matchCommandLine": true
+    // If you install the 'emeraldwalk.runonsave' extension, this will run
+    // the update script whenever CMakeLists.txt is saved.
+    "runonsave.commands": [
+        {
+            "match": "CMakeLists.txt$",
+            "cmd": "python3 ${workspaceFolder}/scripts/update_cmakelists.py",
+            "isAsync": false
         }
-    }
+    ],
+    "cmake.sourceDirectory": "/home/jjy2026/class-main/class-main/pico_project",
+    "C_Cpp.default.compileCommands": "/home/jjy2026/class-main/class-main/pico_project/build_pico2w/compile_commands.json",
+    "C_Cpp.default.compilerPath": "/usr/bin/arm-none-eabi-gcc",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-arm"
 }

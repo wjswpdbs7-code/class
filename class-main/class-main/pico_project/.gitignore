@@ -1,0 +1,10 @@
+build/
+build_pico2w/
+.vscode/
+*.elf
+*.uf2
+*.hex
+*.bin
+*.map
+*.dis
+compile_commands.json

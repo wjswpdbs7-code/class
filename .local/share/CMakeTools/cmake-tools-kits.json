@@ -1,13 +1,5 @@
 [
   {
-    "name": "GCC 13.2.1 arm-none-eabi",
-    "compilers": {
-      "C": "/usr/bin/arm-none-eabi-gcc",
-      "CXX": "/usr/bin/arm-none-eabi-g++"
-    },
-    "isTrusted": true
-  },
-  {
     "name": "GCC 13.3.0 x86_64-linux-gnu",
     "compilers": {
       "C": "/usr/bin/gcc",
@@ -16,10 +8,10 @@
     "isTrusted": true
   },
   {
-    "name": "GCC 15.2.0 x86_64-w64-mingw32",
+    "name": "GCC 7.3.0 avr",
     "compilers": {
-      "C": "/mnt/c/msys64/ucrt64/bin/gcc.exe",
-      "CXX": "/mnt/c/msys64/ucrt64/bin/g++.exe"
+      "C": "/usr/bin/avr-gcc",
+      "CXX": "/usr/bin/avr-g++"
     },
     "isTrusted": true
   }

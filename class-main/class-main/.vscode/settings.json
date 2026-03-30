@@ -1,0 +1,9 @@
+{
+    "cmake.sourceDirectory": "/home/jjy2026/class-main/class-main/pico_project",
+    "chat.tools.terminal.autoApprove": {
+        "/^whoami && pwd && command -v cmake && command -v git && command -v pkg-config$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
